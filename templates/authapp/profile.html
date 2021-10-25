@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block pagetitle  %}
+    User Registration
+{% endblock %}
+
+{% block pagecontent  %}
+
+  <div class="card" style="width: 30rem;">
+  <div class="card-header">
+    Profile
+  </div>
+  <div class="card-body">
+{% for message in messages %}
+  <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    {{ message }}
+  </div>
+{% endfor %}
+
+	<form action="" method="POST">
+
+        {% if user.is_authenticated %}
+
+            {% if user.user_profile %}
+                <!-- load user specific profile pic -->
+                <img src="/media/{{ user.user_profile.profile_pic }}"> <br><br>
+                <a href="{% url 'update_profile_pic' %}" class="btn btn-info btn-sm">Update Profile Pic</a>
+            {% else %}
+                <!-- load default profile pic -->
+                <img src="/media/default.png"> <br><br>
+                <a href="{% url 'add_profile_pic' %}" class="btn btn-info btn-sm">Add Profile Pic</a>
+            {% endif %}
+
+            <div class="form-group">
+                <h1 style="color:tomato;"> Welcome - {{ user.username }} </h1>
+                <p>First Name: {{ user.first_name }}</p>
+                <p>Last Name: {{ user.last_name }}</p>
+                <p>Email Id: {{ user.email }}</p>
+            </div>
+        {% else %}
+            <div class="form-group">
+                <img src="/media/default.png"> <br><br>
+                <h1 style="color:tomato;"> Welcome - Guest </h1>
+            </div>
+        {% endif %}
+	</form>
+  </div>
+</div>
+
+{% endblock %}
+

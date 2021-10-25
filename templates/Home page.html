@@ -1,0 +1,21 @@
+{% extends 'layout.html'%}
+{% load static %}
+
+  {% block bgcolor  %}
+        <link rel="stylesheet" href="{% static 'css/D-mart_style.css' %}">
+    {% endblock %}
+
+
+   {% block titlecontent  %}
+        Home
+    {% endblock %}
+
+{% block pagecontent  %}
+
+     {% include 'slider.html' %}
+
+{% endblock %}
+
+
+<!--bg means background colour-->
+

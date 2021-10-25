@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block pagetitle  %}
+    User Registration
+{% endblock %}
+
+{% block pagecontent  %}
+<h2>Add Your Profile Picture 1111111111111111111</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.as_p}}
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary btn-sm">Add Profile Pic</button>
+    </form>
+{% endblock %}

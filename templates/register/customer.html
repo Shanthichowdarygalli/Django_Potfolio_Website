@@ -1,0 +1,148 @@
+{% extends 'layout.html'%}
+
+
+   {% block titlecontent  %}
+        Registration Form
+    {% endblock %}
+
+{% block pagecontent  %}
+<h1 style="color:green">Customer Cakes Booking Page</h1><br>
+
+	<form action="" method="POST">
+        {% csrf_token %}
+		<table border=0>
+		  <tr>
+			<td>First Name</td>
+			<td><input type="text" name="firstname"></td>
+		  </tr>
+
+		  <tr>
+			<td>Last Name:</td>
+			<td><input type="text" name="lastname"></td>
+		  </tr>
+
+		  <tr>
+			<td>Avaliablecolours:</td>
+			<td>
+				<input type="radio" name="colour" value="pink">
+				<label>Pink</label><br>
+
+				<input type="radio" name="colour" value="yellow">
+				<label>Yellow</label><br>
+
+                <input type="radio" name="colour" value="white">
+				<label>White</label><br>
+
+                <input type="radio" name="colour" value="red">
+				<label>Red</label><br>
+			</td>
+		  </tr>
+
+		  <tr>
+			<td>Contact Number</td>
+			<td><input type="text" name="contactnumber"></td>
+		  </tr>
+
+		  <tr>
+			<td>Email Id</td>
+			<td><input type="text" name="emailid"></td>
+		  </tr>
+
+		  <tr>
+			<td>Address:</td>
+			<td>
+				<textarea name="address" rows="4" cols="50">Address...</textarea>
+			</td>
+		  </tr>
+
+		  <tr>
+			<td>City</td>
+			<td>
+				<select name="city">
+				  <option value="bengaluru">Bengaluru</option>
+				  <option value="chennai">Chennai</option>
+				  <option value="hyderabad">Hyderabad</option>
+				  <option value="vellore">Vellore</option>
+				  <option value="chittoor">Chittoor</option>
+				</select>
+			</td>
+		  </tr>
+
+		  <tr>
+			<td>State</td>
+			<td>
+				<select name="state">
+				  <option value="karnataka">Karnataka</option>
+				  <option value="tamilnadu">Tamilnadu</option>
+				  <option value="telangana">Telangana</option>
+				  <option value="vellore">Vellore</option>
+				  <option value="andhrapradesh">AndhraPradesh</option>
+				</select>
+			</td>
+		  </tr>
+
+		  <tr>
+			<td>Name Of Occasion:</td>
+			<td>
+				<input type="checkbox" name="birthday" value="Birthday">
+				<label>Birthday</label><br>
+
+				<input type="checkbox" name="anniversary" value="Anniversary">
+				<label>Anniversary</label><br>
+
+				<input type="checkbox" name="kidsbirthday" value="Kids Birthday">
+				<label>Kids Birthday</label><br>
+
+                <input type="checkbox" name="others" value="Others">
+				<label>Others</label><br>
+			</td>
+		  </tr>
+
+		  <tr>
+			<td>Weight</td>
+			<td>
+				<select name="weight">
+				  <option value="halfkg">Halfkg</option>
+				  <option value="onekg">Onekg</option>
+				  <option value="twokg">Twokg</option>
+				  <option value="threekg">Threekg</option>
+				  <option value="fivekg">Fivekg</option>
+				</select>
+			</td>
+		  </tr>
+
+            <tr>
+			<td>Type Of Cake</td>
+			<td>
+				<select name="typeofcake">
+				  <option value="blackforestcake">Blackforestcake</option>
+				  <option value="buttercake">Buttercake</option>
+				  <option value="cupcake">Cupcake</option>
+				  <option value="egglesscake">Egglesscake</option>
+				  <option value="coffeecake">Coffeecake</option>
+				</select>
+			</td>
+		  </tr>
+
+		    <tr>
+			<td>By Price</td>
+			<td>
+				<select name="byprice">
+				  <option value="under500">Under500</option>
+				  <option value="600to1000">600To1000</option>
+				  <option value="1000to1500">1000To1500</option>
+				  <option value="1500to2000">1500to2000</option>
+				  <option value="above2000">Above2000</option>
+				</select>
+			</td>
+		  </tr>
+
+		  <tr>
+			<td>Submit</td>
+			<td><input type="submit" value="BookNow"></td>
+		  </tr>
+
+		</table>
+	</form>
+{% endblock %}
+

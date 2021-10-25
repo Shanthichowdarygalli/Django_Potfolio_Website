@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block pagetitle  %}
+    Employee Update Page
+{% endblock %}
+
+{% block pagecontent  %}
+
+	<h1>Employee Update Form</h1>
+
+	<form action="" method="POST">
+		{% csrf_token %}
+		<input type="hidden" name="id" value="{{ employee.id }}">
+		<table border=0>
+		  <tr>
+			<td>Employee Id</td>
+			<td><input type="text" name="eid" value="{{ employee.eid }}"></td>
+		  </tr>
+
+		  <tr>
+			<td>Employee Name:</td>
+			<td><input type="text" name="name" value="{{ employee.name }}"></td>
+		  </tr>
+
+		  <tr>
+			<td>Age</td>
+			<td><input type="text" name="age" value="{{ employee.age }}"></td>
+		  </tr>
+
+		  <tr>
+			<td>Salary</td>
+			<td><input type="text" name="salary" value="{{ employee.salary }}"></td>
+		  </tr>
+
+		  <tr>
+			<td>Address:</td>
+			<td><input type="text" name="address" value="{{ employee.address }}"></td>
+		  </tr>
+
+		  <tr>
+			<td>Update Employee</td>
+			<td><input type="submit" value="Update Employee"></td>
+		  </tr>
+		</table>
+	</form>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+  {% block titlecontent  %}
+        Create Employee
+    {% endblock %}
+
+
+{% block pagecontent  %}
+
+	<h1>Employee Registration Form</h1>
+
+	<form action="" method="POST">
+         {% csrf_token %}
+		<table border=0>
+		  <tr>
+			<td>Employee Id</td>
+			<td><input type="text" name="eid"></td>
+		  </tr>
+
+		  <tr>
+			<td>Employee Name:</td>
+			<td><input type="text" name="name"></td>
+		  </tr>
+
+		  <tr>
+			<td>Age</td>
+			<td><input type="text" name="age"></td>
+		  </tr>
+
+		  <tr>
+			<td>Salary</td>
+			<td><input type="text" name="salary"></td>
+		  </tr>
+
+		  <tr>
+			<td>Address:</td>
+			<td><input type="text" name="address"></td>
+		  </tr>
+
+		  <tr>
+			<td>Submit</td>
+			<td><input type="submit" value="Create Employee"></td>
+		  </tr>
+		</table>
+	</form>
+
+
+{% endblock %}

@@ -1,0 +1,7 @@
+body{
+			background-color: lightblue;
+		}
+		.jumbotron {
+			min-height: 150px;
+			padding: 5em inherit;
+		}
